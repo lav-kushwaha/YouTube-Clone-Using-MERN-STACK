@@ -2,7 +2,6 @@ import React from 'react'
 import './Navbar.css'
 import logo from './youtubelogo.png'
 import SearchBar from './SearchBar/SearchBar'
-
 const Navbar = ()=>{
     return(
         <div className="Container_Navbar">
