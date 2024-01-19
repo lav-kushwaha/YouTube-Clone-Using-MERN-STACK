@@ -1,7 +1,8 @@
 import React from 'react'
 import './Navbar.css'
-// import logo from './Components/Navbar/youtubelogo.png'
 import logo from './youtubelogo.png'
+import SearchBar from './SearchBar/SearchBar'
+
 const Navbar = ()=>{
     return(
         <div className="Container_Navbar">
@@ -16,6 +17,7 @@ const Navbar = ()=>{
                  <p className='logo-title-navbar'>YouTube</p>
                </div>
             </div>
+            <SearchBar/>
         </div>
     )
 }
