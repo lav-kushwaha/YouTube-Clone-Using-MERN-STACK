@@ -39,10 +39,42 @@
     margin-top:10px;
 
 }
+
 .logo-title-navbar{
     margin-top:15px;
     color:white;
     margin-left:5px;
     font-size:20px;
     font-weight:bold;
+}
+.apps_Box{
+    width:25px;
+    margin:auto 0.7rem;
+    height: 25px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+
+.appBox{
+    border:2px solid white;
+    margin:0.1rem;
+    width:2px;
+    height: 2px;
+}
+
+.Auth_cont_Navbar{
+    width: fit-content;
+    margin:auto 0.5rem;
+    position: relative;
+    display: flex;
+}
+
+.Auth_Btn{
+    cursor:pointer;
+    color:#3ea6ff;
+    background-color:rgb(36,36,36); 
+    border:2px solid;
+    padding:0.2rem;
+    border-radius:0.2rem;
 }
