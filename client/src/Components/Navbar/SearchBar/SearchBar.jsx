@@ -7,7 +7,7 @@ import SearchList from './SearchList'
 const SearchBar = () => {
   const [searchQuery,setSearchQuery] = useState("")
   const [searchListA,setSearchList] = useState(false);
-  const TitleArray = ["Video1","video2","Animation Video","Movies",].filter(q =>q.toUpperCase().includes(searchQuery));
+  const TitleArray = ["Video1","video2","Animation Video","Movies",].filter(q =>q.toLowerCase().includes(searchQuery));
 
   return (
     <div className='SearchBar_Container'>

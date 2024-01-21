@@ -18,8 +18,8 @@
     background-color: rgb(19,19,19);
   }
   .container2_Pages_App{
-    width: calc(100vw - 5rem);
-    height: calc(100vh - 3.65rem);
+    width: calc(100vw);
+    height: calc(100vh - 3.7rem);
     border-top: 2px solid rgb(128,128,128,0.45);
     overflow-y: auto;
   }
