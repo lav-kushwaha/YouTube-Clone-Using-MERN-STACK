@@ -32,6 +32,7 @@
 
 .logo_div_Navbar{
     display:flex;
+    text-decoration: none;
 }
 
 .logo_div_Navbar img{
