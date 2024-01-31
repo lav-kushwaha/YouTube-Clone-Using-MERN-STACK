@@ -9,13 +9,14 @@ import {
 } from "react-icons/md";
 import shorts from "./shorts.png";
 import { FaHistory } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
   return (
     <div className="container_DrawaerLeftSidebar" style={toggleDrawerSidebar}>
       <div className="container2_DrawaerLeftSidebar">
         <div className="Drawer_leftsidebar">
-          <div className="icon_sidebar_div">
+          <NavLink to={"/"} className="icon_sidebar_div">
             <p>
               <AiOutlineHome
                 size={22}
@@ -24,7 +25,7 @@ const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
               />
               <div className="text_sidebar_icon">Home</div>
             </p>
-          </div>
+          </NavLink>
           <div className="icon_sidebar_div">
             <p>
               <MdOutlineExplore
@@ -44,7 +45,7 @@ const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
                 className={"icon_sidebar"}
                 style={{ margin: "auto 0.7rem" }}
               />
-              <div className="text_sidebar_icon">Shorts </div>
+              <div className="text_sidebar_icon">Shorts</div>
             </p>
           </div>
           <div className="icon_sidebar_div">
@@ -59,7 +60,7 @@ const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
           </div>
         </div>
         <div className="libraryBtn_Drawerleftsidebar">
-          <div className="icon_sidebar_div">
+          <NavLink to={"/library"} className="icon_sidebar_div">
             <p>
               <MdOutlineVideoLibrary
                 size={22}
@@ -68,7 +69,7 @@ const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
               />
               <div className="text_sidebar_icon">Library</div>
             </p>
-          </div>
+          </NavLink>
           <div className="icon_sidebar_div">
             <p>
               <FaHistory
@@ -111,7 +112,7 @@ const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
           </div>
         </div>
         <div className="subScriptions_lsdbar">
-          <h3>Your Subscription</h3>
+          <h3>Your Subscriptions</h3>
           <div className="chanel_lsdbar">
             <p>C</p>
             <div>Channel</div>
@@ -135,7 +136,7 @@ const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
         </div>
       </div>
        <div className="container3_DrawaerLeftSidebar" onClick={()=>toggleDrawer()}>
-            lav
+            
        </div>
     </div>
   );

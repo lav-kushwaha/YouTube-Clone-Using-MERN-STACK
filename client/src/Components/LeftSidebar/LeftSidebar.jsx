@@ -19,7 +19,7 @@ const LeftSidebar = () => {
       </div>
       <div className="icon_sidebar_div">
         <img src={shorts} alt="shorts png" size={22} className="icon_sidebar" />
-        <div className="text_sidebar_icon">Explore</div>
+        <div className="text_sidebar_icon">Shorts</div>
       </div>
       <div className="icon_sidebar_div">
         <MdOutlineSubscriptions size={22} className="icon_sidebar" />
@@ -27,7 +27,7 @@ const LeftSidebar = () => {
       </div>
       <NavLink to={'/library'} className="icon_sidebar_div">
         <MdOutlineVideoLibrary size={22} className="icon_sidebar" />
-        <div className="text_sidebar_icon" style={{fontSize:"12px"}}>Video</div>
+        <div className="text_sidebar_icon" style={{fontSize:"12px"}}>Library</div>
       </NavLink>
     </div>
   );
