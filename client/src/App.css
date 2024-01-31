@@ -29,13 +29,15 @@
     margin-bottom: 1rem;
     border: 2px solid transparent;
   }
+
   video {
     background-color: rgba(8,8,8,0.662);
   }
+  
   .dot{
     height: 4px;
     width: 4px;
     border-radius: 100%;
     background-color: white;
-    margin: auto 0.5rem;
+    margin: auto 0;
   }
