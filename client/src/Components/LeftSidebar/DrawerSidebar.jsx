@@ -12,7 +12,7 @@ import { FaHistory } from "react-icons/fa";
 
 const DrawerSidebar = ({ toggleDrawer,toggleDrawerSidebar }) => {
   return (
-    <div className="container_DrawaerLeftSidebar" style={{toggleDrawerSidebar}}>
+    <div className="container_DrawaerLeftSidebar" style={toggleDrawerSidebar}>
       <div className="container2_DrawaerLeftSidebar">
         <div className="Drawer_leftsidebar">
           <div className="icon_sidebar_div">
