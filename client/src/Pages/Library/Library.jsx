@@ -1,6 +1,6 @@
 import React from 'react'
 import './Library.css'
-import LeftSidebar from '../../../Components/LeftSidebar/LeftSidebar'
+import LeftSidebar from '../../Components/LeftSidebar/LeftSidebar'
 
 const Library = () => {
   return (
