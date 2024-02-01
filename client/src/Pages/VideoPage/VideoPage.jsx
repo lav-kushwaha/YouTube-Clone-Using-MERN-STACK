@@ -1,6 +1,7 @@
 import React from "react";
 import "./VideoPage.css";
 import LikeWatchLaterSaveBtns from "./LikeWatchLaterSaveBtns";
+import Comments from "../../Components/Comments/Comments";
 // import vid from '../../Components/Video/'
 
 const VideoPage = () => {
@@ -34,6 +35,7 @@ const VideoPage = () => {
               <h2>
                 <u>Comments</u>
               </h2>
+              <Comments/>
             </div>
           </div>
         </div>
