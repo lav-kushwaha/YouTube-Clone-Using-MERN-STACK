@@ -1,5 +1,6 @@
 import React from "react";
 import "./VideoPage.css";
+import LikeWatchLaterSaveBtns from "./LikeWatchLaterSaveBtns";
 // import vid from '../../Components/Video/'
 
 const VideoPage = () => {
@@ -8,7 +9,7 @@ const VideoPage = () => {
       <div className="container2_videoPage">
         <div className="video_display_screen_videoPage">
           <video
-            src=""
+            src="#"
             className={"video_ShowVideo_videoPage"}
             controls
             // autoPlay
@@ -27,6 +28,7 @@ const VideoPage = () => {
                 <p>C</p>
               </b>
               <p className="chanel_name_videoPage">Lav Kushwaha</p>
+              <LikeWatchLaterSaveBtns/>
             </div>
             <div className="comments_VideoPage">
               <h2>
