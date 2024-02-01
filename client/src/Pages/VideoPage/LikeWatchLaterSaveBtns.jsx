@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import { AiFillDislike, AiFillLike, AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
+import {
+  AiFillDislike,
+  AiFillLike,
+  AiOutlineDislike,
+  AiOutlineLike,
+} from "react-icons/ai";
 import { MdPlaylistAddCheck } from "react-icons/md";
-import { RiHeartAddFill, RiPlayListAddFill, RiShareForward2Fill } from "react-icons/ri";
+import {
+  RiHeartAddFill,
+  RiPlayListAddFill,
+  RiShareForward2Fill,
+} from "react-icons/ri";
 import "./LikeWatchLaterSaveBtns.css";
 
 const LikeWatchLaterSaveBtns = () => {
@@ -10,17 +19,16 @@ const LikeWatchLaterSaveBtns = () => {
   const [LikeBtn, setLikebtn] = useState(false);
   const [Dislikebtn, setDislikebtn] = useState(false);
 
-
   const toggleSavedVideo = () => {
     setSAve(() => !SAveVideo);
   };
 
-  const toggleLikeBtn = ()=>{
-     setLikebtn(()=>!LikeBtn)
-  }
-  const toggleDisLikeBtn = ()=>{
-    setDislikebtn(()=>!Dislikebtn)
-  }
+  const toggleLikeBtn = () => {
+    setLikebtn(() => !LikeBtn);
+  };
+  const toggleDisLikeBtn = () => {
+    setDislikebtn(() => !Dislikebtn);
+  };
 
   return (
     <div className="btns_cont_videoPage">
@@ -28,70 +36,44 @@ const LikeWatchLaterSaveBtns = () => {
         <BsThreeDots size={22} />
       </div>
       <div className="btn_VideoPage">
-
         {/*Like*/}
-        <div className="like_videoPage">
+        <div className="like_videoPage" onClick={toggleLikeBtn}>
           {LikeBtn ? (
             <>
-              <AiFillLike
-                onClick={toggleLikeBtn}
-                size={20}
-                className="btns_videoPage"
-              />
+              <AiFillLike size={20} className="btns_videoPage" />
             </>
           ) : (
             <>
-              <AiOutlineLike
-                onClick={toggleLikeBtn}
-                size={20}
-                className="btns_videoPage"
-              />
+              <AiOutlineLike size={20} className="btns_videoPage" />
             </>
           )}
-        <b>1</b>
+          <b>1</b>
         </div>
 
         {/*Dislike*/}
-        <div className="like_videoPage">
+        <div className="like_videoPage" onClick={toggleDisLikeBtn}>
           {Dislikebtn ? (
             <>
-              <AiFillDislike
-                onClick={toggleDisLikeBtn}
-                size={20}
-                className="btns_videoPage"
-              />
+              <AiFillDislike size={20} className="btns_videoPage" />
             </>
           ) : (
             <>
-              <AiOutlineDislike
-                onClick={toggleDisLikeBtn}
-                size={20}
-                className="btns_videoPage"
-              />
+              <AiOutlineDislike size={20} className="btns_videoPage" />
             </>
           )}
-        <b>1</b>
+          <b>1</b>
         </div>
 
-
-               {/*Save Video */}
-               <div className="like_videoPage">
+        {/*Save Video */}
+        <div className="like_videoPage" onClick={toggleSavedVideo}>
           {SAveVideo ? (
             <>
-              <MdPlaylistAddCheck
-                onClick={toggleSavedVideo}
-                size={25}
-                className="btns_videoPage"
-              />
+              <MdPlaylistAddCheck size={25} className="btns_videoPage" />
               <b>Save</b>
             </>
           ) : (
             <>
-              <RiPlayListAddFill
-                onClick={toggleSavedVideo}
-                size={25}
-                className="btns_videoPage"
-              />
+              <RiPlayListAddFill size={16} className="btns_videoPage" />
               <b>Saved</b>
             </>
           )}
@@ -99,17 +81,11 @@ const LikeWatchLaterSaveBtns = () => {
 
         {/*Heart*/}
         <div className="like_videoPage">
-          <RiHeartAddFill
-            size={20}
-            className="btns_videoPage"
-          />
+          <RiHeartAddFill size={20} className="btns_videoPage" />
           <b>Thanks</b>
         </div>
         <div className="like_videoPage">
-          <RiShareForward2Fill
-            size={20}
-            className="btns_videoPage"
-          />
+          <RiShareForward2Fill size={20} className="btns_videoPage" />
           <b>Share</b>
         </div>
       </div>
