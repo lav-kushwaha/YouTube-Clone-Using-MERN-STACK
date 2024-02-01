@@ -19,8 +19,9 @@ const VideoPage = () => {
               <p className="video_title_VideoPage">Title</p>
               <div className="views_date_btns_VideoPage">
                 <div className="views_videoPage">
-                  5 Views <div className="dot"></div> uploaded 1 year ago
+                  5 Views <div className="dot">  </div>uploaded 1 year ago
                 </div>
+                <LikeWatchLaterSaveBtns/>
               </div>
             </div>
             <div className="chanel_details_videoPage">
@@ -28,7 +29,6 @@ const VideoPage = () => {
                 <p>C</p>
               </b>
               <p className="chanel_name_videoPage">Lav Kushwaha</p>
-              <LikeWatchLaterSaveBtns/>
             </div>
             <div className="comments_VideoPage">
               <h2>

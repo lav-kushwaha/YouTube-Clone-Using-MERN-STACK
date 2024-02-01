@@ -7,12 +7,21 @@ import "./LikeWatchLaterSaveBtns.css";
 
 const LikeWatchLaterSaveBtns = () => {
   const [SAveVideo, setSAve] = useState(true);
-  const [Dislikebtn, setDislikebtn] = useState(false);
   const [LikeBtn, setLikebtn] = useState(false);
+  const [Dislikebtn, setDislikebtn] = useState(false);
 
-  const handleClick = () => {
+
+  const toggleSavedVideo = () => {
     setSAve(() => !SAveVideo);
   };
+
+  const toggleLikeBtn = ()=>{
+     setLikebtn(()=>!LikeBtn)
+  }
+  const toggleDisLikeBtn = ()=>{
+    setDislikebtn(()=>!Dislikebtn)
+  }
+
   return (
     <div className="btns_cont_videoPage">
       <div className="btn_VideoPage">
@@ -25,13 +34,15 @@ const LikeWatchLaterSaveBtns = () => {
           {LikeBtn ? (
             <>
               <AiFillLike
-                size={25}
+                onClick={toggleLikeBtn}
+                size={20}
                 className="btns_videoPage"
               />
             </>
           ) : (
             <>
               <AiOutlineLike
+                onClick={toggleLikeBtn}
                 size={20}
                 className="btns_videoPage"
               />
@@ -45,13 +56,15 @@ const LikeWatchLaterSaveBtns = () => {
           {Dislikebtn ? (
             <>
               <AiFillDislike
-                size={25}
+                onClick={toggleDisLikeBtn}
+                size={20}
                 className="btns_videoPage"
               />
             </>
           ) : (
             <>
               <AiOutlineDislike
+                onClick={toggleDisLikeBtn}
                 size={20}
                 className="btns_videoPage"
               />
@@ -61,6 +74,30 @@ const LikeWatchLaterSaveBtns = () => {
         </div>
 
 
+               {/*Save Video */}
+               <div className="like_videoPage">
+          {SAveVideo ? (
+            <>
+              <MdPlaylistAddCheck
+                onClick={toggleSavedVideo}
+                size={25}
+                className="btns_videoPage"
+              />
+              <b>Save</b>
+            </>
+          ) : (
+            <>
+              <RiPlayListAddFill
+                onClick={toggleSavedVideo}
+                size={25}
+                className="btns_videoPage"
+              />
+              <b>Saved</b>
+            </>
+          )}
+        </div>
+
+        {/*Heart*/}
         <div className="like_videoPage">
           <RiHeartAddFill
             size={20}
@@ -74,27 +111,6 @@ const LikeWatchLaterSaveBtns = () => {
             className="btns_videoPage"
           />
           <b>Share</b>
-        </div>
-        <div className="like_videoPage">
-          {SAveVideo ? (
-            <>
-              <MdPlaylistAddCheck
-                onClick={handleClick}
-                size={25}
-                className="btns_videoPage"
-              />
-              <b>Save</b>
-            </>
-          ) : (
-            <>
-              <RiPlayListAddFill
-                onClick={handleClick}
-                size={20}
-                className="btns_videoPage"
-              />
-              <b>Saved</b>
-            </>
-          )}
         </div>
       </div>
     </div>

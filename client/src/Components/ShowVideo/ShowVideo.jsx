@@ -1,15 +1,16 @@
 import React from 'react'
 import './ShowVideo.css'
+import {Link} from 'react-router-dom'
 
 const ShowVideo = ({vid}) => {
   return (
     <>
-    <div>
+    <Link to={`/videopage/${vid?._id}`}>
         <video
         src={`${vid?.src}`}
         className='video_ShowVideo'
         />
-    </div>
+    </Link>
        <div className="video_description">
         <div className="Chanel_logo_App">
             <div className="fstChar_logo_App">
