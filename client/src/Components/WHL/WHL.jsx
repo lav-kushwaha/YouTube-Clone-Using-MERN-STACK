@@ -12,7 +12,10 @@ const WHL = ({page,videoList}) => {
                 <div className="box_WHL leftside_whl">
                     <b>Your {page} Shown Here</b>
                     <div className="clear_History_btn">
-                        Clear History
+                        {
+                            page ==="History" &&  
+                            <div className="clear_History_btn">Clear History</div>
+                        }
                     </div>
                 </div>
                 <div className="rightSide_whl">
