@@ -2,6 +2,7 @@ import React from 'react'
 import './Home.css'
 import LeftSidebar from '../../Components/LeftSidebar/LeftSidebar'
 import ShowVideoGrid from '../../Components/ShowVideoGrid/ShowVideoGrid'
+// import vid from '../../Components/Video/vid'
 
 const Home = () => {
 
