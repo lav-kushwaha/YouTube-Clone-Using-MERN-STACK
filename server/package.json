@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Youtube Clone Using MERN Stack",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
