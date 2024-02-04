@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Navbar.css'
 import logo from './youtubelogo.png'
 import SearchBar from './SearchBar/SearchBar'
@@ -6,15 +6,37 @@ import {RiVideoAddLine} from 'react-icons/ri'
 import {IoMdNotificationsOutline} from 'react-icons/io'
 import {BiUserCircle} from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import {GoogleLogin} from 'react-google-login'
+import {gapi} from "gapi-script"
 
 const Navbar = ({toggleDrawer})=>{
-    // const CurrentUser = null;
-    const CurrentUser ={
-        result:{
-            email:"xyz@gmail.com",
-            joinedOn:"2222-07-15T09:57:23.489Z"
-        },
-    };
+    const CurrentUser = null;
+    // const CurrentUser ={
+    //     result:{
+    //         email:"xyz@gmail.com",
+    //         joinedOn:"2222-07-15T09:57:23.489Z"
+    //     },
+    // };
+
+    useEffect(()=>{
+      function start(){
+        gapi.client.init({
+          clientId:'215080557168-72kn12dfnb29hsan6klbkibd4shhd2q2.apps.googleusercontent.com',
+          scope:"email",
+        })
+      }
+      gapi.load("client:auth2",start);
+    },[])
+
+    const onSuccess = (response)=>{
+      const Email = response?.profileObj.email;
+      console.log(Email);
+    }
+
+    const onFailure = ((response)=>{
+      console.log("Failed",response); 
+    })
+
     return(
         <div className="Container_Navbar">
             <div className="Burger_Logo_Navbar">
@@ -57,6 +79,11 @@ const Navbar = ({toggleDrawer})=>{
           </>
          ) : (
                <>
+               <GoogleLogin
+               clientId={'215080557168-72kn12dfnb29hsan6klbkibd4shhd2q2.apps.googleusercontent.com'}
+               onSuccess={onSuccess}
+               onFailure={onFailure}/>
+                
                 <p className="Auth_Btn">
                     <BiUserCircle size={22}/>
                     <b>Sign in</b>
