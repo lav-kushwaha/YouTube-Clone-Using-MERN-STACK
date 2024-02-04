@@ -8,6 +8,8 @@ import {BiUserCircle} from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import {GoogleLogin} from 'react-google-login'
 import {gapi} from "gapi-script"
+import {useDispatch} from 'react-redux'
+import { login } from '../../actions/auth'
 
 const Navbar = ({toggleDrawer})=>{
     const CurrentUser = null;
@@ -18,19 +20,25 @@ const Navbar = ({toggleDrawer})=>{
     //     },
     // };
 
+
+
     useEffect(()=>{
       function start(){
         gapi.client.init({
           clientId:'215080557168-72kn12dfnb29hsan6klbkibd4shhd2q2.apps.googleusercontent.com',
           scope:"email",
+
         })
       }
       gapi.load("client:auth2",start);
     },[])
 
+    const dispatch = useDispatch();
+
     const onSuccess = (response)=>{
       const Email = response?.profileObj.email;
       console.log(Email);
+      dispatch(login({email:Email}))
     }
 
     const onFailure = ((response)=>{
