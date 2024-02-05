@@ -8,19 +8,18 @@ import {BiUserCircle} from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import {GoogleLogin} from 'react-google-login'
 import {gapi} from "gapi-script"
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { login } from '../../actions/auth'
 
 const Navbar = ({toggleDrawer})=>{
-    const CurrentUser = null;
+  const CurrentUser=useSelector(state=>state.currentUserReducer)
+    // const CurrentUser = null;
     // const CurrentUser ={
     //     result:{
     //         email:"xyz@gmail.com",
     //         joinedOn:"2222-07-15T09:57:23.489Z"
     //     },
     // };
-
-
 
     useEffect(()=>{
       function start(){
@@ -90,13 +89,16 @@ const Navbar = ({toggleDrawer})=>{
                <GoogleLogin
                clientId={'215080557168-72kn12dfnb29hsan6klbkibd4shhd2q2.apps.googleusercontent.com'}
                onSuccess={onSuccess}
-               onFailure={onFailure}/>
-                
-                <p className="Auth_Btn">
-                    <BiUserCircle size={22}/>
-                    <b>Sign in</b>
+               onFailure={onFailure}
+               render={ (renderProps)=>
+               <p onClick={renderProps.onClick} className="Auth_Btn">
+               <BiUserCircle size={22}/>
+                <b>Sign in</b>
                 </p>
-                </>)}
+                }
+                />
+                </>
+                )}
             </div>
         </div>
     )

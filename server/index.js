@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use(bodyParser.json());
-app.use('./user',userRoutes)
+app.use('/user',userRoutes)
 const PORT = process.env.PORT
 
 app.listen(PORT,()=>{
@@ -26,7 +26,7 @@ app.listen(PORT,()=>{
 const DB_URL = process.env.CONNECTION_URL
 
 mongoose.connect(DB_URL,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
-    console.log("MongoDb database connected")
+    console.log("MongoDb database connected..")
 }).catch((error)=>{
     console.log(error)
 })
