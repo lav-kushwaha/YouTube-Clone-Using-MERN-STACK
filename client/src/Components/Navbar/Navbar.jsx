@@ -10,16 +10,17 @@ import {GoogleLogin} from 'react-google-login'
 import {gapi} from "gapi-script"
 import {useDispatch, useSelector} from 'react-redux'
 import { login } from '../../actions/auth'
+import Auth from '../../Pages/Auth/Auth'
 
 const Navbar = ({toggleDrawer})=>{
-  const CurrentUser=useSelector(state=>state.currentUserReducer)
+  // const CurrentUser=useSelector(state=>state.currentUserReducer)
     // const CurrentUser = null;
-    // const CurrentUser ={
-    //     result:{
-    //         email:"xyz@gmail.com",
-    //         joinedOn:"2222-07-15T09:57:23.489Z"
-    //     },
-    // };
+    const CurrentUser ={
+        result:{
+            email:"xyz@gmail.com",
+            joinedOn:"2222-07-15T09:57:23.489Z"
+        },
+    };
 
     useEffect(()=>{
       function start(){
@@ -45,6 +46,7 @@ const Navbar = ({toggleDrawer})=>{
     })
 
     return(
+       <>
         <div className="Container_Navbar">
             <div className="Burger_Logo_Navbar">
                 <div className="burger" onClick={()=>toggleDrawer()}>
@@ -101,6 +103,17 @@ const Navbar = ({toggleDrawer})=>{
                 )}
             </div>
         </div>
+           {
+            // AuthBtn &&
+            // <Auth
+            // setEditCreateChanelBtn={setEditCreateChanelBtn}
+            // setAuthBtn={setAuthBtn}
+            // User={CurrentUser}
+            // />
+
+            <Auth/>
+          }
+       </>
     )
 }
 export default Navbar;
