@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import logo from './youtubelogo.png'
 import SearchBar from './SearchBar/SearchBar'
@@ -13,11 +13,12 @@ import { login } from '../../actions/auth'
 import Auth from '../../Pages/Auth/Auth'
 
 const Navbar = ({toggleDrawer})=>{
+  const [AuthBtn, setAuthBtn] = useState(false)
   // const CurrentUser=useSelector(state=>state.currentUserReducer)
     // const CurrentUser = null;
-    const CurrentUser ={
+    const CurrentUser = {
         result:{
-            email:"xyz@gmail.com",
+            email:"lav@gmail.com",
             joinedOn:"2222-07-15T09:57:23.489Z"
         },
     };
@@ -76,7 +77,7 @@ const Navbar = ({toggleDrawer})=>{
             <div className="Auth_cont_Navbar">
         {CurrentUser ? (
           <>
-            <div className="Chanel_logo_App">
+            <div className="Chanel_logo_App" onClick={()=>setAuthBtn(true)}>
               <p className="fstChar_logo_App">
                 {CurrentUser?.result.name ? (
                   <>{CurrentUser?.result.name.charAt(0).toUpperCase()}</>
@@ -104,14 +105,13 @@ const Navbar = ({toggleDrawer})=>{
             </div>
         </div>
            {
-            // AuthBtn &&
-            // <Auth
-            // setEditCreateChanelBtn={setEditCreateChanelBtn}
-            // setAuthBtn={setAuthBtn}
-            // User={CurrentUser}
-            // />
+            AuthBtn &&
+            <Auth
+            setAuthBtn={setAuthBtn}
+            User={CurrentUser} 
+            />
 
-            <Auth/>
+            // <Auth/>
           }
        </>
     )

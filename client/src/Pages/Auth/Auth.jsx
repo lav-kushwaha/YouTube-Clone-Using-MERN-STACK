@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setCurrentUser } from "../../actions/currentUser";
 import "./Auth.css";
+
 function Auth({ User, setAuthBtn, setEditCreateChanelBtn }) {
 
   const dispatch = useDispatch();
