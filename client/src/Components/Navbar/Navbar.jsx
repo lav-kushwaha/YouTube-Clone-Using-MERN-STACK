@@ -14,14 +14,14 @@ import Auth from '../../Pages/Auth/Auth'
 
 const Navbar = ({toggleDrawer,setEditCreateChanelBtn})=>{
   const [AuthBtn, setAuthBtn] = useState(false)
-  // const CurrentUser=useSelector(state=>state.currentUserReducer)
+  const CurrentUser=useSelector(state=>state.currentUserReducer)
     // const CurrentUser = null;
-    const CurrentUser = {
-        result:{
-            email:"lav@gmail.com",
-            joinedOn:"2222-07-15T09:57:23.489Z"
-        },
-    };
+    // const CurrentUser = {
+    //     result:{
+    //         email:"lav@gmail.com",
+    //         joinedOn:"2222-07-15T09:57:23.489Z"
+    //     },
+    // };
 
     useEffect(()=>{
       function start(){
@@ -111,8 +111,6 @@ const Navbar = ({toggleDrawer,setEditCreateChanelBtn})=>{
             User={CurrentUser} 
             setEditCreateChanelBtn={setEditCreateChanelBtn}
             />
-
-            // <Auth/>
           }
        </>
     )

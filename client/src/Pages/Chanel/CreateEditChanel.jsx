@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/auth";
-// import { updateChanelDate } from "../../actions/chanelUser";
+import { updateChanelDate } from "../../actions/chanelUser";
 import "./CreateEditChanel.css";
 function CreateEditChanel({ setEditCreateChanelBtn }) {
   //   const CurrentUser = {
@@ -22,12 +22,12 @@ function CreateEditChanel({ setEditCreateChanelBtn }) {
     } else if (!desc) {
       alert("Plz Enter Discription !");
     } else {
-    //   dispatch(
-    //     updateChanelDate(CurrentUser?.result._id, {
-    //       name: name,
-    //       desc: desc,
-    //     })
-    //   );
+      dispatch(
+        updateChanelDate(CurrentUser?.result._id, {
+          name: name,
+          desc: desc,
+        })
+      );
       setEditCreateChanelBtn(false);
       setTimeout(() => {
         dispatch(login({ email: CurrentUser?.result.email }));
