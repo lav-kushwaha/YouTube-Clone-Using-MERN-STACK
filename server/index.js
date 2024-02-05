@@ -1,17 +1,20 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-
-
+import cors from 'cors'
+import bodyParser from 'body-parser'
 import userRoutes from './routes/user.js'
 
-const app = express();
 dotenv.config()
+
+const app = express();
+app.use(cors());
 
 app.get('/',(req,res)=>{
     res.send("hello")
 })
 
+app.use(bodyParser.json());
 app.use('./user',userRoutes)
 const PORT = process.env.PORT
 
