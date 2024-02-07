@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 const DescribeChanel = ({setEditCreateChanelBtn,Cid}) => {
 
 
-  const chanels = useSelector(state=>state.chanelReducer);
+  const chanels = useSelector((state) => state?.chanelReducers);
   console.log(chanels)
   // const currentChanel = useSelector()
 
