@@ -19,7 +19,7 @@ const AllRoutes = ({setEditCreateChanelBtn}) => {
         <Route path='/likedvideo' element={<LikedVideo/>}/>
         <Route path='/yourvideos' element={<YourVideo/>}/>
         <Route path='/videopage/:vid' element={<VideoPage/>}/>
-        <Route path='/chanelpage/:cid' element={<Chanel setEditCreateChanelBtn={setEditCreateChanelBtn}/>}/>
+        <Route path='/chanel/:Cid' element={<Chanel setEditCreateChanelBtn={setEditCreateChanelBtn}/>}/>
     </Routes>
   )
 }

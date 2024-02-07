@@ -1,13 +1,20 @@
 import React from 'react'
 import { FaEdit, FaUpload } from 'react-icons/fa'
 import './DescribeChanel.css'
+import { useSelector } from 'react-redux';
 
-const DescribeChanel = ({setEditCreateChanelBtn}) => {
+const DescribeChanel = ({setEditCreateChanelBtn,Cid}) => {
+
+
+  const chanels = useSelector(state=>state.chanelReducer);
+  console.log(chanels)
+  // const currentChanel = useSelector()
+
   return (
     <div className='container3_chanel'>
        <div className="chanel_logo_chanel">
           <b>
-            c
+            C
           </b>
        </div>   
        <div className="description_chanel">

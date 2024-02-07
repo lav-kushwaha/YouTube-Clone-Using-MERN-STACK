@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import AllRoutes from './Components/AllRoutes';
 import DrawerSidebar from './Components/LeftSidebar/DrawerSidebar';
 import Navbar from './Components/Navbar/Navbar'
 import {BrowserRouter as Router} from "react-router-dom";
 import CreateEditChanel from './Pages/Chanel/CreateEditChanel';
+import { useDispatch } from 'react-redux';
+import { fetchAllChanel } from './actions/chanelUser';
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+      dispatch(fetchAllChanel());
+  },[dispatch])
+
+
   const [toggleDrawerSidebar, setToggleDrawerSidebar] = useState({
     display: "none",
   });

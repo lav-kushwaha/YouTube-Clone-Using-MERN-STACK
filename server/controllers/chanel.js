@@ -1,6 +1,6 @@
-import  users from '../models/auth.js'
 import mongoose from "mongoose";
-import users from "../models/auth.js";
+import  users from '../models/auth.js'
+
 
 export const updateChanelData = async (req, res) => {
   const { id: _id } = req.params;
@@ -18,7 +18,7 @@ export const updateChanelData = async (req, res) => {
           desc: desc,
         },
       },
-      { new: true }
+      { new: true}
     );
 
     res.status(200).json(updateData);

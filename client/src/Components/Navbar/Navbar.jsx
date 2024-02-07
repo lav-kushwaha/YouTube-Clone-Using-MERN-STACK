@@ -13,8 +13,7 @@ import { login } from '../../actions/auth'
 import Auth from '../../Pages/Auth/Auth'
 
 const Navbar = ({toggleDrawer,setEditCreateChanelBtn})=>{
-  const [AuthBtn, setAuthBtn] = useState(false)
-  const CurrentUser=useSelector(state=>state.currentUserReducer)
+  const [AuthBtn, setAuthBtn] = useState(false);
     // const CurrentUser = null;
     // const CurrentUser = {
     //     result:{
@@ -23,12 +22,13 @@ const Navbar = ({toggleDrawer,setEditCreateChanelBtn})=>{
     //     },
     // };
 
+    const CurrentUser=useSelector(state=>state.currentUserReducer);
+    
     useEffect(()=>{
       function start(){
         gapi.client.init({
           clientId:'215080557168-72kn12dfnb29hsan6klbkibd4shhd2q2.apps.googleusercontent.com',
           scope:"email",
-
         })
       }
       gapi.load("client:auth2",start);
@@ -39,12 +39,12 @@ const Navbar = ({toggleDrawer,setEditCreateChanelBtn})=>{
     const onSuccess = (response)=>{
       const Email = response?.profileObj.email;
       console.log(Email);
-      dispatch(login({email:Email}))
+      dispatch(login({email:Email}));
     }
 
     const onFailure = ((response)=>{
       console.log("Failed",response); 
-    })
+    });
 
     return(
        <>

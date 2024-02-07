@@ -38,7 +38,7 @@ function Auth({ User, setAuthBtn, setEditCreateChanelBtn }) {
                 </Link>
               }
             </>
-          ) : (
+          ) : ( 
             <>
               <input
                 type="submit"
