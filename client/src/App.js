@@ -31,7 +31,7 @@ function App() {
         toggleDrawerSidebar={toggleDrawerSidebar}   
        />
       }
-      <AllRoutes/>
+      <AllRoutes setEditCreateChanelBtn={setEditCreateChanelBtn}/>
     </Router>
   );
 }
