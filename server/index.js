@@ -20,7 +20,6 @@ const PORT = process.env.PORT
 
 app.listen(PORT,()=>{
     console.log(`server Running on the ${PORT}`);
-
 })
 
 const DB_URL = process.env.CONNECTION_URL
