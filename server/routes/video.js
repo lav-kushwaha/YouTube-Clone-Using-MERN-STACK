@@ -1,13 +1,13 @@
 import express from 'express'
 
 import {uploadVideo,getAllvideos} from '../controllers/video.js'
-import {likeController} from '../controllers/like.js'
-import {viewController} from '../controllers/views.js'
-import {likeVideoController,getAlllikeVideoController,deleteLikeVideoController} from '../controllers/likeVideo.js'
-import {watchLaterController,getAllwatchLaterController,deletewatchLaterController} from '../controllers/watchLater.js'
-import {HistoryController,getAllHistoryController,deleteHistoryController} from '../controllers/History.js'
+// import {likeController} from '../controllers/like.js'
+// import {viewController} from '../controllers/views.js'
+// import {likeVideoController,getAlllikeVideoController,deleteLikeVideoController} from '../controllers/likeVideo.js'
+// import {watchLaterController,getAllwatchLaterController,deletewatchLaterController} from '../controllers/watchLater.js'
+// import {HistoryController,getAllHistoryController,deleteHistoryController} from '../controllers/History.js'
 import upload from '../Helpers/fileHelpers.js'
-import auth from '../middleware/auth.js'
+import auth from '../middleware/auth.js' 
 
 const routes=express.Router();
 
