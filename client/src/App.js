@@ -8,12 +8,14 @@ import CreateEditChanel from './Pages/Chanel/CreateEditChanel';
 import { useDispatch } from 'react-redux';
 import { fetchAllChanel } from './actions/chanelUser';
 import VideoUpload from './Pages/VideoUpload/VideoUpload';
+import { getAllVideo } from './actions/video';
 function App() {
 
   const dispatch = useDispatch()
 
   useEffect(()=>{
       dispatch(fetchAllChanel());
+      dispatch(getAllVideo());
   },[dispatch])
 
 
