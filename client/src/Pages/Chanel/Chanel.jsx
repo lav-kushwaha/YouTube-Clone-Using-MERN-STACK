@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 // import vid from '../../Components/Video/vid'
  
 
-const Chanel = ({setEditCreateChanelBtn}) => {
+const Chanel = ({setEditCreateChanelBtn,setVidUploadPage}) => {
 
     const {Cid} = useParams();
 
@@ -51,6 +51,7 @@ const Chanel = ({setEditCreateChanelBtn}) => {
           <div className="container2_Pages_App">
             <DescribeChanel 
             Cid={Cid}
+            setVidUploadPage={setVidUploadPage}
             setEditCreateChanelBtn={setEditCreateChanelBtn}/>
            <ShowVideoGrid vids={vids}/>
           </div>

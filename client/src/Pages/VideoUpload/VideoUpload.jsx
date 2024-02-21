@@ -27,6 +27,7 @@ function VideoUpload({ setVidUploadPage }) {
       }
     },
   };
+  
   const uploadVideoFile = () => {
     if (!title) {
       alert("Plz Enter A Title of the video");

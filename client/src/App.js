@@ -31,10 +31,14 @@ function App() {
       });
     }
   };
+
+  const [vidUploadPage, setVidUploadPage] = useState(false);
   const [EditCreateChanelBtn, setEditCreateChanelBtn] = useState(false);
   return (
     <Router>
-      {<VideoUpload/>}
+      { 
+         vidUploadPage && <VideoUpload setVidUploadPage={setVidUploadPage}/>
+      }
       {EditCreateChanelBtn && <CreateEditChanel setEditCreateChanelBtn={setEditCreateChanelBtn}/>}
       <Navbar setEditCreateChanelBtn={setEditCreateChanelBtn} toggleDrawer={toggleDrawer}/>
       {
@@ -43,7 +47,7 @@ function App() {
         toggleDrawerSidebar={toggleDrawerSidebar}   
        />
       }
-      <AllRoutes setEditCreateChanelBtn={setEditCreateChanelBtn}/>
+      <AllRoutes setVidUploadPage={setVidUploadPage} setEditCreateChanelBtn={setEditCreateChanelBtn}/>
     </Router>
   );
 }
