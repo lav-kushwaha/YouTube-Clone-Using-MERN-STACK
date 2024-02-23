@@ -23,8 +23,8 @@ export const getVideos = () => API.get("/video/getvideos");
 export const likeVideo = (id, Like) => API.patch(`/video/like/${id}`, { Like });
 export const viewsVideo = (id) => API.patch(`/video/view/${id}`);
 
-// export const addToLikedVideo = (likedVideoData) =>
-//   API.post("/video/likeVideo", likedVideoData);
+export const addToLikedVideo = (likedVideoData) =>
+  API.post("/video/likeVideo", likedVideoData);
 // export const getAlllikedVideo = () => API.get("/video/getAlllikeVideo");
 // export const deletelikedVideo = (videoId, Viewer) =>
 //   API.delete(`/video/deleteLikedVideo/${videoId}/${Viewer}`);
