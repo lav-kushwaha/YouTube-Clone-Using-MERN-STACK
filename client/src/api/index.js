@@ -25,23 +25,23 @@ export const viewsVideo = (id) => API.patch(`/video/view/${id}`);
 
 export const addToLikedVideo = (likedVideoData) =>
   API.post("/video/likeVideo", likedVideoData);
-// export const getAlllikedVideo = () => API.get("/video/getAlllikeVideo");
-// export const deletelikedVideo = (videoId, Viewer) =>
-//   API.delete(`/video/deleteLikedVideo/${videoId}/${Viewer}`);
+export const getAlllikedVideo = () => API.get("/video/getAlllikeVideo");
+export const deletelikedVideo = (videoId, Viewer) =>
+  API.delete(`/video/deleteLikedVideo/${videoId}/${Viewer}`);
 
-// export const addTowatchLater = (watchLaterData) =>
-//   API.post("/video/watchLater", watchLaterData);
-// export const getAllwatchLater = () => API.get("/video/getAllwatchLater");
-// export const deleteWatchLater = (videoId, Viewer) =>
-//   API.delete(`/video/deleteWatchlater/${videoId}/${Viewer}`);
+export const addTowatchLater = (watchLaterData) =>
+  API.post("/video/watchLater", watchLaterData);
+export const getAllwatchLater = () => API.get("/video/getAllwatchLater");
+export const deleteWatchLater = (videoId, Viewer) =>
+  API.delete(`/video/deleteWatchlater/${videoId}/${Viewer}`);
 
-// export const addToHistory = (HistoryData) =>
-//   API.post("/video/History", HistoryData);
-// export const getAllHistory = () => API.get("/video/getAllHistory");
-// export const deleteHistory = (userId) =>
-//   API.delete(`/video/deleteHistory/${userId}`);
+export const addToHistory = (HistoryData) =>
+  API.post("/video/History", HistoryData);
+export const getAllHistory = () => API.get("/video/getAllHistory");
+export const deleteHistory = (userId) =>
+  API.delete(`/video/deleteHistory/${userId}`);
 
-//   export const postComment=(CommentData)=>API.post('/comment/post',CommentData)
-//   export const deleteComment=(id)=>API.delete(`/comment/delete/${id}`)
-//   export const editComment=(id,commentBody)=>API.patch(`/comment/edit/${id}`,{commentBody})
-//   export const getAllComment=()=>API.get('/comment/get')
+  export const postComment=(CommentData)=>API.post('/comment/post',CommentData)
+  export const deleteComment=(id)=>API.delete(`/comment/delete/${id}`)
+  export const editComment=(id,commentBody)=>API.patch(`/comment/edit/${id}`,{commentBody})
+  export const getAllComment=()=>API.get('/comment/get')

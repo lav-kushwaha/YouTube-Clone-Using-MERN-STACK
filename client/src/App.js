@@ -1,23 +1,28 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import AllRoutes from './Components/AllRoutes';
-import DrawerSidebar from './Components/LeftSidebar/DrawerSidebar';
-import Navbar from './Components/Navbar/Navbar'
-import {BrowserRouter as Router} from "react-router-dom";
-import CreateEditChanel from './Pages/Chanel/CreateEditChanel';
-import { useDispatch } from 'react-redux';
-import { fetchAllChanel } from './actions/chanelUser';
-import VideoUpload from './Pages/VideoUpload/VideoUpload';
-import { getAllVideo } from './actions/video';
+import "./App.css";
+import React, { useEffect } from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useState } from "react";
+import AllRoutes from "./Components/AllRoutes";
+import DrawerSidebar from "./Components/LeftSidebar/DrawerSidebar";
+import CreateEditChanel from "./Pages/Chanel/CreateEditChanel";
+import { useDispatch } from "react-redux";
+import { fetchAllChanel } from "./actions/chanelUser";
+import VideoUpload from "./Pages/VideoUpload/VideoUpload";
+import { getAllVideo } from "./actions/video";
+import { getAlllikedVideo } from "./actions/likedVideo";
+import { getAllwatchLater } from "./actions/watchLater";
+import { getAllHistory } from "./actions/History";
 function App() {
-
-  const dispatch = useDispatch()
-
-  useEffect(()=>{
-      dispatch(fetchAllChanel());
-      dispatch(getAllVideo());
-  },[dispatch])
-
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(fetchAllChanel());
+    dispatch(getAllVideo());
+    dispatch(getAlllikedVideo());
+    dispatch(getAllwatchLater());
+    dispatch(getAllHistory());
+  }, [dispatch]);
 
   const [toggleDrawerSidebar, setToggleDrawerSidebar] = useState({
     display: "none",
@@ -33,23 +38,25 @@ function App() {
       });
     }
   };
-
   const [vidUploadPage, setVidUploadPage] = useState(false);
   const [EditCreateChanelBtn, setEditCreateChanelBtn] = useState(false);
   return (
     <Router>
-      { 
-         vidUploadPage && <VideoUpload setVidUploadPage={setVidUploadPage}/>
-      }
-      {EditCreateChanelBtn && <CreateEditChanel setEditCreateChanelBtn={setEditCreateChanelBtn}/>}
-      <Navbar setEditCreateChanelBtn={setEditCreateChanelBtn} toggleDrawer={toggleDrawer}/>
-      {
-       <DrawerSidebar  
+      {vidUploadPage && <VideoUpload  setVidUploadPage={setVidUploadPage}/>}
+      {EditCreateChanelBtn && (
+        <CreateEditChanel setEditCreateChanelBtn={setEditCreateChanelBtn} />
+      )}
+      <Navbar
+        setEditCreateChanelBtn={setEditCreateChanelBtn}
         toggleDrawer={toggleDrawer}
-        toggleDrawerSidebar={toggleDrawerSidebar}   
-       />
-      }
-      <AllRoutes setVidUploadPage={setVidUploadPage} setEditCreateChanelBtn={setEditCreateChanelBtn}/>
+      />
+
+      <DrawerSidebar
+        toggleDrawer={toggleDrawer}
+        toggleDrawerSidebar={toggleDrawerSidebar}
+      />
+
+      <AllRoutes setVidUploadPage={setVidUploadPage} setEditCreateChanelBtn={setEditCreateChanelBtn} />
     </Router>
   );
 }
