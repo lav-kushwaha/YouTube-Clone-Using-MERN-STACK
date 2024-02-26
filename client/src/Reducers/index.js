@@ -15,5 +15,6 @@ export default combineReducers({
   videoReducer,
   likedVideoReducer,
   watchLaterReducer,
-  HistoryReducer,commentReducer
+  HistoryReducer,
+  commentReducer
 });
