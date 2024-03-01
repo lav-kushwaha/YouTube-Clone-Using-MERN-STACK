@@ -28,7 +28,7 @@ const TitleArray = useSelector(s=>s?.videoReducer)
               onClick={e=>setSeachList(false)}
             />
             </Link>
-            <BsMicFill className="Mic_SearchBar" />
+            <BsMicFill className="Mic_SearchBar searchIcon_SearchBar" />
             {searchQuery&& seachListA &&
               <SearchList
               setSearchQuery={setSearchQuery}
