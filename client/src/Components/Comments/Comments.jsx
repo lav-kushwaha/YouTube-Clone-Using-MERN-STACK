@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postComment } from "../../actions/comments";
-import "./comments.css";
+import "./Comments.css";
 import DisplayComments from "./DisplayComments";
 function Comments({ videoId }) {
   const [commentText, setCommentText] = useState("");

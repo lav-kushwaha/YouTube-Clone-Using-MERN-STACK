@@ -2,8 +2,7 @@ import moment from "moment";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteComment, editComment } from "../../actions/comments";
-
-import "./comments.css";
+import "./Comments.css";
 function DisplayComments({
   cId,
   commentBody,
