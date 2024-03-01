@@ -3,7 +3,7 @@ import LeftSidebar from "../../Components/LeftSidebar/LeftSidebar";
 import WHLVideoList from "../../Components/WHL/WHLVideoList";
 import { FaHistory } from "react-icons/fa";
 import { MdOutlineWatchLater } from "react-icons/md";
-import vid from "../../Components/Video/vid.mp4";
+// import vid from "../../Components/Video/vid.mp4";
 import "./Library.css";
 import { AiOutlineLike } from "react-icons/ai";
 import { useSelector } from "react-redux";

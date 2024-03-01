@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import vid from "../../Components/Video/vid.mp4";
+// import vid from "../../Components/Video/vid.mp4";
 import ShowVideo from '../ShowVideo/ShowVideo';
 function ShwoVideoList({videoId}) {
   const vids=useSelector(s=>s.videoReducer)
