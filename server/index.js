@@ -16,7 +16,7 @@ const app=express()
 // app.use(cors())
 app.use(cors(
     {
-        origin:[""],
+        origin:["https://youtubecloneweb.vercel.app"],
         methods:["POST","GET"],
         credentials:"true"
     }
