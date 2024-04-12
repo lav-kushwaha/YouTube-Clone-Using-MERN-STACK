@@ -11,7 +11,6 @@ import path from 'path'
 
 dontenv.config()
 
-
 const app=express()
 app.use(cors())
 app.use(cors(
